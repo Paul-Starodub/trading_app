@@ -21,7 +21,7 @@ async def validation_exception_handler(request: Request, exc: ValidationError):
 
 
 fake_users = [
-    {"id": 1, "role": "admin", "name": ["Bob"]},  # Bob must be string
+    {"id": 1, "role": "admin", "name": "Bob"},
     {"id": 2, "role": "investor", "name": "John"},
     {"id": 3, "role": "trader", "name": "Matt"},
     {
