@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from pydantic.fields import Field
 
 app = FastAPI(title="Trading App")
 
@@ -39,8 +40,8 @@ fake_trades = [
 class Trade(BaseModel):
     id: int
     user_id: int
-    currency: str
-    price: float
+    currency: str = Field(max_length=5)
+    price: float = Field(ge=0)
     amount: float
 
 
